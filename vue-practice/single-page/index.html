@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+
+    <style>
+        .button-class {
+            width: 170px;
+            height: 40px;
+						margin-top: 50px;
+						margin-left: 50px;
+        }
+
+        img {
+            height: 250px;
+            width: 320px;
+            transform: rotate(90deg);
+        }
+
+				.img-box {
+					margin-top: 80px;
+				}
+
+				.raz-enter{
+					transform: rotate(270deg);
+					transform: scale(2,2);
+					opacity: 0;
+				}
+
+				.raz-enter-active {
+					transition: all ease 2s;
+					
+				}
+
+				.raz-leave {
+
+				}
+
+				.raz-leave-active {
+			
+				}
+    </style>
+</head>
+<body>
+	<div id="app">
+		<div class="img-box">
+			<transition name="raz">
+				<img v-for="" src="./assets/raz.jpg" class="" v-if="show"></span>
+			</transition>
+		</div>
+
+		<button @click="display" class="button-class">Click Me To Reveal a Raz</button>
+	</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script> 
+		Vue.component("name", {
+			
+		})
+
+    let myApp = new Vue({
+				el: "#app",
+        data: {
+						num: 5,
+            message: "Hello World",
+            show: false
+        },
+        methods: {
+            display() {
+                this.show = !this.show;
+            }
+        }
+		})
+
+
+
+</script>
+
+</body>
+</html>

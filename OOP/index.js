@@ -36,3 +36,5 @@ let s = new String("zafir");
 console.log(`String s is of type ${typeof s}`);
 console.log(typeof(null));
 
+
+
