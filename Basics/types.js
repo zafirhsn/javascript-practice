@@ -66,6 +66,16 @@ console.log(`NaN is of type ${typeof NaN}`);
 
 // Number Coercions
 // Only an empty string will be coerced to 0. Any single alphabet or words will be NaN
+/* 
+Implicit conversion to Number happens in more cases.
+? Comparison operators (>, <, <=, >=)
+? bitwise operators (|, &, ^, ~)
+? arithmetic operators (-, +, *, /, %) (+ does not trigger numeric conversion if one of the perands is a string)
+? Unary + operator
+? loose equality (==, !=)
+
+
+*/
 console.log(Number()); //0
 console.log(Number([])); //0
 console.log(Number("")); //0
@@ -79,6 +89,7 @@ console.log(Number("12+3")); //NaN
 
 console.log("===08===");
 // String coercions
+// ? Implicit string conversion is triggered by the binary + operator when any operand is a string
 console.log(String()); // 
 console.log(String(9)) // '9'
 console.log(String(false)); // "false"
@@ -90,7 +101,17 @@ console.log(String(null)); // "null"
 console.log(String(undefined)); // "undefined"
 
 
+// Boolean Coercions
+// ? Implicit boolean conversion is triggered by logical operators (||, &&, !) or conditinal context (if, for, else, else if, while)
 
+/* 
+Logical operators such as || and && do boolean conversions internally, but actually return the value of original operands, even if they are not boolean
+?returns number 123, instead of returning true
+?'hello' and 123 are still coerced to boolean internally to calculate the expression
+?let x = 'hello' && 123;   // x === 123
+*/
+
+// User defined types all evaluate to true
 console.log("===09===");
 console.log(Boolean()) //false
 console.log(Boolean("")) //false
@@ -100,6 +121,7 @@ console.log(Boolean({})); //true
 console.log(Boolean(null)); //false
 console.log(Boolean(undefined)); //false
 console.log(Boolean(18)); //true
+
 
 
 
