@@ -44,7 +44,6 @@ let func = function add(a, b) {
 console.log(typeof func);
 
 // Everything that isn't one of the 6 primitive types is some form of object.
-// Primitives are immutable
 // I thought this would throw an error, but JS is probably copying by value so the original string doesn't change
 console.log("===06===");
 let str = "Zafir";
@@ -60,8 +59,48 @@ console.log(str);
 console.log("===07===");
 console.log(`NaN is of type ${typeof NaN}`);
 
+// Type coercion is extremely inportant in JavaScript because it happens all the time. Let's see what get coerced to what. It is important to know that there are only 3 types of coercion/cassting possible in JavaScript. You can only cast to string, number, and boolean. Nothing else gets cast as anything else.
 
-// Type coercion is extremely inportant in JavaScript because it happens all the time. Let's see what get coerced to what
-console.log(Boolean([]));
-console.log(Number([]) === Boolean([]));
-console.log([[]] == false);
+// https://dorey.github.io/JavaScript-Equality-Table/
+// https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/?source=post_page-----3ac039f9877b----------------------
+
+// Number Coercions
+// Only an empty string will be coerced to 0. Any single alphabet or words will be NaN
+console.log(Number()); //0
+console.log(Number([])); //0
+console.log(Number("")); //0
+console.log(Number(null)) //0
+console.log(Number([9])); //9
+console.log(Number(false)); //0 
+console.log(Number({})); //NaN
+console.log(Number(undefined)); //NaN
+console.log(Number("12+3")); //NaN
+
+
+console.log("===08===");
+// String coercions
+console.log(String()); // 
+console.log(String(9)) // '9'
+console.log(String(false)); // "false"
+console.log(String([])); //
+console.log(String({})); // [object Object]
+console.log(String([[]])); //
+console.log(String([9, 1])); //'9'
+console.log(String(null)); // "null"
+console.log(String(undefined)); // "undefined"
+
+
+
+console.log("===09===");
+console.log(Boolean()) //false
+console.log(Boolean("")) //false
+console.log(Boolean([])) // true
+console.log(Boolean([9])) //true
+console.log(Boolean({})); //true
+console.log(Boolean(null)); //false
+console.log(Boolean(undefined)); //false
+console.log(Boolean(18)); //true
+
+
+
+
