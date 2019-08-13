@@ -36,7 +36,7 @@ console.log("===04===");
 let arr = [];
 console.log(typeof arr);
 
-// Functions are objects, but they're a special type of object called a function object. Function objects are first-class objects, meaning they aren't restricted in any way. They have all the abilities and properties an object can have. This is what allows us to store fucntions in variables. What's special about a function object, however, is that it can be called.
+// Functions are objects, but they're a special type of object called a function object. Function objects are first-class objects, meaning they aren't restricted in any way. They have all the abilities and properties an object can have. This is what allows us to store functions in variables. What's special about a function object, however, is that it can be called.
 console.log("===05===");
 let func = function add(a, b) {
   return a + b;
@@ -56,40 +56,45 @@ console.log(str);
 
 // NaN is a number...
 // Why? Because JavaScript says so
+// 
 console.log("===07===");
 console.log(`NaN is of type ${typeof NaN}`);
 
 // Type coercion is extremely inportant in JavaScript because it happens all the time. Let's see what get coerced to what. It is important to know that there are only 3 types of coercion/cassting possible in JavaScript. You can only cast to string, number, and boolean. Nothing else gets cast as anything else.
 
-// https://dorey.github.io/JavaScript-Equality-Table/
-// https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/?source=post_page-----3ac039f9877b----------------------
+//* https://dorey.github.io/JavaScript-Equality-Table/
+//* https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/?source=post_page-----3ac039f9877b----------------------
 
-// Number Coercions
+//! Number Coercions
 // Only an empty string will be coerced to 0. Any single alphabet or words will be NaN
 /* 
 Implicit conversion to Number happens in more cases.
 ? Comparison operators (>, <, <=, >=)
 ? bitwise operators (|, &, ^, ~)
-? arithmetic operators (-, +, *, /, %) (+ does not trigger numeric conversion if one of the perands is a string)
+? arithmetic operators (-, +, *, /, %) (+ does not trigger numeric conversion if one of the operands is a string)
 ? Unary + operator
 ? loose equality (==, !=)
-
-
 */
+
+/*
+? When applying == to null or undefined, numeric conversion does not happen. Null equals only to null or undefined, and does not equal anything else. 
+ */
 console.log(Number()); //0
 console.log(Number([])); //0
 console.log(Number("")); //0
 console.log(Number(null)) //0
 console.log(Number([9])); //9
-console.log(Number(false)); //0 
+console.log(Number(false)); //0
 console.log(Number({})); //NaN
 console.log(Number(undefined)); //NaN
 console.log(Number("12+3")); //NaN
+console.log(Number(NaN));
 
 
 console.log("===08===");
-// String coercions
+//! String coercions
 // ? Implicit string conversion is triggered by the binary + operator when any operand is a string
+// ? When converting a string to a number, the engine first trims leading and trailing whitespace, \n, \t characters, returning NaN if the trimmed string does not represent a valid number. If string is empty, it returns 0
 console.log(String()); // 
 console.log(String(9)) // '9'
 console.log(String(false)); // "false"
@@ -99,19 +104,20 @@ console.log(String([[]])); //
 console.log(String([9, 1])); //'9'
 console.log(String(null)); // "null"
 console.log(String(undefined)); // "undefined"
+console.log(String(NaN)); // "NaN"
+console.log(String("\n"))
 
 
-// Boolean Coercions
+//! Boolean Coercions
 // ? Implicit boolean conversion is triggered by logical operators (||, &&, !) or conditinal context (if, for, else, else if, while)
 
 /* 
 Logical operators such as || and && do boolean conversions internally, but actually return the value of original operands, even if they are not boolean
-?returns number 123, instead of returning true
 ?'hello' and 123 are still coerced to boolean internally to calculate the expression
 ?let x = 'hello' && 123;   // x === 123
 */
 
-// User defined types all evaluate to true
+//! User defined types all evaluate to true
 console.log("===09===");
 console.log(Boolean()) //false
 console.log(Boolean("")) //false
@@ -121,6 +127,14 @@ console.log(Boolean({})); //true
 console.log(Boolean(null)); //false
 console.log(Boolean(undefined)); //false
 console.log(Boolean(18)); //true
+console.log(Boolean(NaN)); //false
+
+// You said primitives have no methods, but then how can I do this: "abc".length? 
+// ? Primitives don't have methods. When you call a method on a primitive, JS takes your primitive, makes an object out of it, calls the method on the object, returns the method evaluation to you and deletes the object (garbage collection)
+console.log("===10===");
+str = "abc";
+console.log(str.length);
+
 
 
 
