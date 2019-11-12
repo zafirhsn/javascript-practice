@@ -1,10 +1,10 @@
 class car {
-    constructor() {
-        this.model = "Ford",
-        this.year = 2015,
-        this.color = "red", 
-        this.plate = "HXY-1234"
-    }
+  constructor() {
+    this.model = "Ford",
+    this.year = 2015,
+    this.color = "red", 
+    this.plate = "HXY-1234"
+  }
 }
 
 car.prototype.wheels = 4;

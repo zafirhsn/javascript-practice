@@ -1,6 +1,6 @@
 // While some people would say JavaScript does not have types because it is a dynamically typed language, it still has loose definitions of types
 // A dynamically typed language means you don’t have to declare types in the language. The language places types at runtime. 
-// JavaScript has 7 primitive types. They are null, undefined, boolean string, number, object, and symbol. Symbol was added in ES6
+// JavaScript has 7 built-in types. They are null, undefined, boolean, string, number, object, and symbol. Symbol was added in ES6
 
 /* JavaScript is also said to be a weakly typed language. This means that JS allows types to be inferred as other types. For example, 1 + ‘2’ would output ‘12’ in JS, but in many languages it would throw an error. The reason this works is because JS is coercing 1 from number type to string. Coercion happens very frequently in JS and is something to be very aware of.  */
 
@@ -22,7 +22,7 @@ console.log(`undefType is of type ${typeof undefType}`);
 console.log(`boolType is of type ${typeof boolType}`);
 console.log(`strType is of type ${typeof strType}`);
 console.log(`numType is of type ${typeof numType}`);
-console.log(`objType is of type ${typeof objType}`)
+console.log(`objType is of type ${typeof objType}`);
 console.log(`symType is of type ${typeof symType}`);
 
 // Uninitiated variables are initiated as undefined, in both type and value
@@ -52,15 +52,14 @@ try {
 } catch(err) {
   console.log(err);
 }
-console.log(str);
+console.log(str); //Even so, without an error, we still see that the original string didn't change, because primitives are immutable
 
 // NaN is a number...
 // Why? Because JavaScript says so
-// 
 console.log("===07===");
 console.log(`NaN is of type ${typeof NaN}`);
 
-// Type coercion is extremely inportant in JavaScript because it happens all the time. Let's see what get coerced to what. It is important to know that there are only 3 types of coercion/cassting possible in JavaScript. You can only cast to string, number, and boolean. Nothing else gets cast as anything else.
+// Type coercion is extremely important in JavaScript because it happens all the time. Let's see what get coerced to what. It is important to know that there are only 3 types of coercion/casting possible in JavaScript. You can only cast to string, number, and boolean. Nothing else gets cast as anything else.
 
 //* https://dorey.github.io/JavaScript-Equality-Table/
 //* https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/?source=post_page-----3ac039f9877b----------------------
@@ -88,7 +87,7 @@ console.log(Number(false)); //0
 console.log(Number({})); //NaN
 console.log(Number(undefined)); //NaN
 console.log(Number("12+3")); //NaN
-console.log(Number(NaN));
+console.log(Number(NaN)); //NaN
 
 
 console.log("===08===");
@@ -101,11 +100,11 @@ console.log(String(false)); // "false"
 console.log(String([])); //
 console.log(String({})); // [object Object]
 console.log(String([[]])); //
-console.log(String([9, 1])); //'9'
+console.log(String([9, 1])); //'9,1'
 console.log(String(null)); // "null"
 console.log(String(undefined)); // "undefined"
 console.log(String(NaN)); // "NaN"
-console.log(String("\n"))
+console.log(String("\n")) // 
 
 
 //! Boolean Coercions
