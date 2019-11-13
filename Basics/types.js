@@ -1,3 +1,4 @@
+// ! JAVASCRIPT, A WEAKLY TYPED LANGUAGE
 // While some people would say JavaScript does not have types because it is a dynamically typed language, it still has loose definitions of types
 // A dynamically typed language means you don’t have to declare types in the language. The language places types at runtime. 
 // JavaScript has 7 built-in types. They are null, undefined, boolean, string, number, object, and symbol. Symbol was added in ES6
@@ -133,6 +134,50 @@ console.log(Boolean(NaN)); //false
 console.log("===10===");
 str = "abc";
 console.log(str.length);
+
+
+// ! PRIMITIVES VS. REFERENCE TYPES 
+// So the 6 primitive types in JS, as mentioned before, are string, number, booolean, null, undefined, and symbol. Object is the one reference type. What does this mean? What is the difference? 
+
+console.log("===11===");
+let name = "Zafir";
+console.log(name);
+
+let secondName = name;
+console.log(secondName);
+
+name = "Bob";
+console.log(secondName);
+
+// In this example, after we change the name variable to be "Bob", secondName does not change. This is because secondName does not contain a reference to name. Instead, JavaScript copies the contents of name into secondName
+
+let person = {
+  age: 22,
+  name: "Zafir",
+  hobbies: ["fishing", "sports"]
+};
+
+let secondPerson = person;
+console.log(secondPerson);
+
+person.age = 30;
+console.log(secondPerson);
+
+secondPerson.name = "Bob";
+console.log(person);
+
+// In this example, we've done the same thing as perviously, but with an object. When person changes, secondPerson does as well because secondPerson is a reference to person. 
+
+// ? Stack vs. Heap
+// All primitive values are stored on the stack. When you declare a primitive variable, the value is stored directly in the memory location the variable accesses. All primitive values have object equivalents which are wrappers for the primitives. (string vs. String, String is the object equivalent of string). Object equivalents allow us to call methods on primitives. Ex: "abc".length. It's important to remember that the method is NOT being called on the primitive, but on the object version of it. 
+
+// All reference values are stored on the heap. When you declare a reference variable, the location the variable accesses contains a pointer to the actual location where the object is stored in the heap. 
+
+
+
+
+
+
 
 
 
