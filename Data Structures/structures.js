@@ -17,15 +17,19 @@ Hash tables are most important. We'll see how to implement each one of these str
 // Remember strings in javascript are immutable, but their characters are accessible like arrays
 let str = "zafir hasan";
 console.log(str.length);
+console.log(str[2]);
 // ^ .split()
 console.log("===SPLIT===")
 // Split the string on the space character, creating an array of substrings
 // If split is called with no arguments, the whole string will become the one and only element in the array
+// If you split on a character or substring, it's important to remember that that character or substring will be missing from the final array, it is removed.
 let strArr = str.split(" ");
 let oneArr = str.split();
+let twoArr = str.split("f");
 let charArr = str.split(""); 
 console.log(strArr);
 console.log(oneArr);
+console.log(twoArr);
 console.log(charArr);
 
 // ^ .charAt(index)
@@ -73,7 +77,6 @@ console.log(num.toString());
 
 // ^ ARRAY METHODS 
 let arr = ["apple", "orange", "banana", "lemon", "mango", "papaya"];
-
 
 // ^ .join()
 console.log("===JOIN===")
