@@ -115,4 +115,17 @@ console.log(typeof arr[3] === "undefined");
 // Splice can be used to 
 
 
+// ! LINKED LISTS
+// A linked list is made up of nodes. Each node contains two pieces: some piece of data and a link to the next node. You string nodes along in this way using that second attribute.
+
+let arr2 = new Array(4,5,10,2,0, "zafir");
+console.log(arr2);
+
+let str1 = "hello";
+let str2 = new String("hello");
+console.log(typeof str1);
+console.log(typeof str2);
+console.log(str2 instanceof Object);
+
+
 

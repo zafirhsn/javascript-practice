@@ -43,7 +43,6 @@
 // ? Reachability 
 // We know that JS has a garbage collector that handles freeing up memory, but how does it decide what to clean up? It depends on what is no longer reachable in your code. So what is no longer reachable? Well if you look at the heap you'll see this tree like structure with a root node going down to leaf nodes which contains our actual variables. If a variable is reachable from that root node, JS doesn't garbage collect it. Variables that are no longer reachable are garbage collected.
 
-
 // ? Stop the World GC
 // JS stops the program, nothing runs. Then the GC runs quickly. This cycle happens many times. 
 
@@ -51,7 +50,7 @@
 // JS treats garbage collection different in the new space from the old space. This idea of treating different ages of memory different in a GC context is known as a generational garbage collector. 
 
 // ? Scavenging for the new space
-// When the new space becomes full, the GC will do this thing called "scavenging". When scavenging, JS will traverse the heap starting from the root node and copy everything over. Then it will delete the old memory space. Therefore, everything that was reachable is kept intact and everything that wasn't is gone. Problem is, this carries a very high space complexity because JS is copying everything over. However, remember te new space has smaller data, so it's nt too big a deal. 
+// When the new space becomes full, the GC will do this thing called "scavenging". When scavenging, JS will traverse the heap starting from the root node and copy everything over. Then it will delete the old memory space. Therefore, everything that was reachable is kept intact and everything that wasn't is gone. Problem is, this carries a very high space complexity because JS is copying everything over. However, remember te new space has smaller data, so it's not too big a deal. 
 
 // ? Mark and Sweep for the old space
 // Traverse the nodes, mark the ones which are active, and remove the ones that aren't.
