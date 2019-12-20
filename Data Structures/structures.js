@@ -114,18 +114,52 @@ console.log(typeof arr[3] === "undefined");
 // ^ splice()
 // Splice can be used to 
 
+// ! ARRAYS
+console.log("===ARRAYS===")
+// Arrays are dynamic in JS. There's no such thing as static arrays. When an array is full and you add another element, JS will automatically create a new array that is twice the size of the current array and copy each element over. 
+// There are two ways to initiate an array in JavaScript, using the constructor or literal. When we use the class constructor for primitives, that is different that creating a primitive literal. However, it is the same for arrays; they're objects anyway. 
+
+let numArr = new Array(3);
+console.log(numArr instanceof Object); // true
+console.log(numArr.length); // 3
+let numArr2 = [];
+console.log(numArr2 instanceof Object); // true
+console.log(numArr2.length) // 0
+
+// Arrays are passed by reference 
+let numArr3 = numArr2; 
+numArr3.push("zafir");
+console.log(numArr2); // ["zafir"]
+
+numArr2[3] = "hasan";
+console.log(numArr2);
+console.log(typeof numArr2[1])
+
+
 
 // ! LINKED LISTS
-// A linked list is made up of nodes. Each node contains two pieces: some piece of data and a link to the next node. You string nodes along in this way using that second attribute.
+console.log("===LINKED LISTS===");
+// A linked list is made up of nodes. Each node contains two pieces: some piece of data and a link to the next node. You string nodes along in this way using that second attribute. 
 
-let arr2 = new Array(4,5,10,2,0, "zafir");
-console.log(arr2);
+class LinkedList {
+  constructor(data, next) {
+    this.data = data;
+    this.next = next;
+  }
+}
 
-let str1 = "hello";
-let str2 = new String("hello");
-console.log(typeof str1);
-console.log(typeof str2);
-console.log(str2 instanceof Object);
+class Node {
+  constructor() {
 
+  }
+}
 
+function zafir() {
+  this.age = 23; 
+}
+
+var z = new zafir();
+console.log(z.age);
+var x = new zafir();
+console.log(x.age);
 

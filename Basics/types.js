@@ -166,7 +166,7 @@ console.log(secondPerson);
 secondPerson.name = "Bob";
 console.log(person);
 
-// In this example, we've done the same thing as perviously, but with an object. When person changes, secondPerson does as well because secondPerson is a reference to person. 
+// In this example, we've done the same thing as previously, but with an object. When person changes, secondPerson does as well because secondPerson is a reference to person. 
 
 // ? Stack vs. Heap
 // All primitive values are stored on the stack. When you declare a primitive variable, the value is stored directly in the memory location the variable accesses. All primitive values have object equivalents which are wrappers for the primitives. (string vs. String, String is the object equivalent of string). Object equivalents allow us to call methods on primitives. Ex: "abc".length. It's important to remember that the method is NOT being called on the primitive, but on the object version of it. 

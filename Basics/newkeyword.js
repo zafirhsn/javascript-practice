@@ -19,7 +19,6 @@ console.log(obj1.x);
 
 // Internally, jS is doing 4 things
 // ^ 1. Creates an empty object { }
-// ^ 2. Assigns the __proto__ property of the object to be the prototype object on the function {__proto__ = myFunc.prototype }
 // ^ 3. All properties and functions are now assigned to the object { __proto__ = myFunc.prototype, x=100}
 // ^ 4. JS returns the object to us (It adds "return this" at the end of our function). If there is no return statement, JS returns implicitly, like mentioned. If return is primitive value, JS ignores it. If return a JS object, JS will not complete the above 3 steps.
 
