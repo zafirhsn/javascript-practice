@@ -15,4 +15,3 @@ var lengthOfLongestSubstring = function(s) {
 let hashT = {};
 console.log(hashT[" "] === undefined);
 console.log(hashT[" "])
- 
