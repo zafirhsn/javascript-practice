@@ -15,9 +15,12 @@ Hash tables are most important. We'll see how to implement each one of these str
 
 // ^ STRING METHODS
 // Remember strings in javascript are immutable, but their characters are accessible like arrays
+console.log("===BASICS===");
 let str = "zafir hasan";
 console.log(str.length);
 console.log(str[2]);
+console.log(str + "c"); // zafir hasanc
+
 // ^ .split()
 console.log("===SPLIT===")
 // Split the string on the space character, creating an array of substrings
@@ -134,6 +137,29 @@ console.log(numArr2); // ["zafir"]
 numArr2[3] = "hasan";
 console.log(numArr2);
 console.log(typeof numArr2[1])
+
+
+// ! OBJECTS 
+// When defining object properties, JavaScript will convert numbered properties to strings. So below, we have a property that is the number 4, it is internally turned into a string "4". same thing with arr. Computed properties are put in brackets. 
+console.log("===OBJECTS===")
+let comp = "computed";
+
+let obj = {
+  "zafir": 23,
+  4: "hello",
+  arr: [2, 3, "hey", 10],
+  [comp]: "this is computed",
+  add(a, b) {
+    return a + b;
+  }
+}
+console.log(obj);
+// you can access object properties through dot notation or brackets
+console.log(obj[4]);
+// console.log(obj.4);
+console.log(obj.zafir);
+console.log(obj.hasOwnProperty("zafir")); // A way to check if the object has a property. WILL NOT check prototype chain!
+
 
 
 
