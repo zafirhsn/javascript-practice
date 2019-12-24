@@ -4,7 +4,7 @@
 
 /* 
 1. Hash tables
-2. Linked Lists
+2. Linked Lists6 t
 3. Binary search trees
 4. Dynamic Arrays
 5. Stacks and Queues
