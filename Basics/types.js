@@ -171,7 +171,9 @@ console.log(person);
 // ? Stack vs. Heap
 // All primitive values are stored on the stack. When you declare a primitive variable, the value is stored directly in the memory location the variable accesses. All primitive values have object equivalents which are wrappers for the primitives. (string vs. String, String is the object equivalent of string). Object equivalents allow us to call methods on primitives. Ex: "abc".length. It's important to remember that the method is NOT being called on the primitive, but on the object version of it. 
 
-// All reference values are stored on the heap. When you declare a reference variable, the location the variable accesses contains a pointer to the actual location where the object is stored in the heap. 
+// All reference values are stored on the heap. When you declare a reference variable, the location the variable accesses contains a pointer to the actual location where the object is stored in the heap.
+
+
 
 
 
