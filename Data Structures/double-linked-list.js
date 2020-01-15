@@ -105,7 +105,40 @@ class DoubleLinkedList {
   }
 
 
-  removeAtIndex(){}
+  removeAtIndex(index) {
+    let count = 0;
+    let tmp = this.head;
+    if (!this.head || index >= this.length || index < 0) {
+      return false;
+    }
+    else if (index === this.length - 1) {
+      this.pop();
+      return this;
+    }
+    else if (index === 0) {
+      this.shift();
+      return this;
+    }
+    else if (this.head === this.tail) {
+      this.head = null;
+      this.tail = null;
+      this.length--;
+      return this;
+    }
+    while (count < index) {
+      tmp = tmp.next;
+      count++;
+    }
+    tmp.next.prev = tmp.prev;
+    tmp.prev.next = tmp.next;
+    tmp.next = null;
+    tmp.prev = null;
+    this.length--;
+    return this;
+
+  }
+
+
   getIndex(){}
   setIndex() {}
   search(){}
@@ -118,3 +151,4 @@ console.log(DLL);
 // console.log(DLL.shift());
 console.log(DLL.unshift(10));
 console.log(DLL.insertAtIndex(20, 0));
+console.log(DLL.removeAtIndex(2));
