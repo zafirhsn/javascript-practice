@@ -82,7 +82,26 @@ class DoubleLinkedList {
   }
 
   insertAtIndex(val, index) {
-    
+    let count = 0;
+    let tmp = this.head;
+    if (index < 0 || index >= this.length) {
+      return false;
+    }
+    else if (!this.head || index === this.length - 1) {
+      this.push(val);
+      return this;
+    }
+    while (count < index) {
+      tmp = tmp.next;
+      count++;
+    }
+    let newNode = new Node(val);
+    newNode.prev = tmp;
+    newNode.next = tmp.next;
+    tmp.next.prev = newNode;
+    tmp.next = newNode;
+    this.length++;
+    return this;
   }
 
 
@@ -98,4 +117,4 @@ DLL.push(8);
 console.log(DLL);
 // console.log(DLL.shift());
 console.log(DLL.unshift(10));
-console.log(DLL);
+console.log(DLL.insertAtIndex(20, 0));
