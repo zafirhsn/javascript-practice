@@ -32,3 +32,8 @@ let test = {};
 console.log(typeof test[4]);
 test[4] = "hello";
 console.log(test);
+
+
+let num = -121;
+let str = num.toString().split("");
+console.group(str);
