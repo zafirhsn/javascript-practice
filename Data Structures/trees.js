@@ -51,6 +51,39 @@ class BST {
       return true;
     }
   }
+  DFS(root = this.root, visited = []) {
+    if (root) {
+      visited.push(root.val);
+      if (root.left) {
+        this.DFS(root.left, visited);
+      }
+      if (root.right) {
+        this.DFS(root.right, visited);
+      }
+    }
+    return visited;
+  }
+}
+
+function BFS(root) {
+  let queue = [];
+  queue.push(root);
+  let visited = [];
+  while (queue.length > 0) {
+    let curr = queue.shift();
+    visited.push(curr.val);
+    if (curr.left) {
+      queue.push(curr.left);
+    }
+    if (curr.right) {
+      queue.push(curr.right);
+    }
+  }
+  return visited;
+}
+
+function helper(node) {
+
 }
 
 let tree = new BST();
@@ -58,5 +91,7 @@ tree.insert(9);
 tree.insert(10);
 tree.insert(7);
 tree.insert(8);
-console.log(tree.find(this.root, 11));
+console.log(tree);
+// console.log(BFS(tree.root));
+console.log(tree.DFS());
 
