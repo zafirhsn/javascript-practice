@@ -1,4 +1,7 @@
 // ! JAVASCRIPT, A WEAKLY TYPED LANGUAGE
+
+// This is a test line added to test configurations on MacBook Pro
+
 // While some people would say JavaScript does not have types because it is a dynamically typed language, it still has loose definitions of types
 // A dynamically typed language means you don’t have to declare types in the language. The language places types at runtime. 
 // JavaScript has 7 built-in types. They are null, undefined, boolean, string, number, object, and symbol. Symbol was added in ES6
