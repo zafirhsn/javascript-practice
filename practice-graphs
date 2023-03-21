@@ -1,0 +1,75 @@
+class Node {
+  constructor(val) {
+    this.val = val || null;
+  }
+}
+
+
+// Adjacency list 
+// Adjacency matrix (n^2 space complexity)
+// Edge list
+
+class AdjacencyList {
+  constructor() {
+    this.list = { };
+  }
+  addVertex(v) {
+    this.list[v] = [];
+  }
+  removeVertex(v) {
+    const arr = this.list[v];
+    for (let i = 0; i < arr.length; i++) {
+      let key = arr[i];
+      let val = this.list[key];
+      for (let i = 0; i < val.length; i++) {
+        if (val[i] === v) {
+          val.splice(i, 1);
+        }
+      }
+    }
+    delete this.list[v];
+  }
+  addEdge(v1, v2) {
+    this.list[v1].push(v2);
+    this.list[v2].push(v1);
+  }
+  removeEdge(v1, v2) {
+    let e1 = this.list[v1].indexOf(v2);
+    this.list[v1].splice(e1, 1);
+    let e2 = this.list[v2].indexOf(v1);
+    this.list[v2].splice(e2, 1);
+  }
+}
+
+
+const myGraph = new AdjacencyList();
+myGraph.addVertex('0');
+myGraph.addVertex('1');
+myGraph.addVertex('2');
+myGraph.addVertex('3');
+myGraph.addVertex('4');
+myGraph.addVertex('5');
+myGraph.addVertex('6');
+
+myGraph.addEdge('3', '1');
+myGraph.addEdge('3', '4');
+myGraph.addEdge('4', '2');
+myGraph.addEdge('4', '5');
+myGraph.addEdge('1', '2');
+myGraph.addEdge('1', '0');
+myGraph.addEdge('0', '2');
+myGraph.addEdge('6', '5');
+
+console.log(myGraph);
+
+myGraph.removeVertex('4');
+
+console.log(myGraph);
+
+/* 
+{
+
+}
+
+*/
+

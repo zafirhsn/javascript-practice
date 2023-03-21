@@ -140,7 +140,7 @@ class DoubleLinkedList {
 
 
   getIndex(){}
-  setIndex() {}
+  setIndex(){}
   search(){}
 }
 
